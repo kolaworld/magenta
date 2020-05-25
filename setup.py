@@ -22,7 +22,7 @@ from setuptools import setup
 # execute (e.g., tensorflow, pretty_midi, etc.).
 # Makes the __version__ variable available.
 with open('magenta/version.py') as in_file:
-  exec(in_file.read())  # pylint: disable=exec-used
+    exec(in_file.read())  # pylint: disable=exec-used
 
 REQUIRED_PACKAGES = [
     'IPython',
@@ -39,7 +39,7 @@ REQUIRED_PACKAGES = [
     # tensor2tensor requires gym, but the newest version of gym depends on a
     # a version of cloudpickle that is incompatible with tensorflow-probability
     # 0.7.0.
-    'gym < 0.16.0',
+    'gym == 0.14.0',
     'imageio',
     'intervaltree >= 2.1.0',
     'joblib >= 0.12',
@@ -49,6 +49,7 @@ REQUIRED_PACKAGES = [
     'mir_eval >= 0.4',
     'numpy >= 1.14.6',  # 1.14.6 is required for colab compatibility.
     'pandas >= 0.18.1',
+    'oauth2client == 3.0.0',
     'pretty_midi >= 0.2.6',
     'protobuf >= 3.6.1',
     'pygtrie >= 2.3',
